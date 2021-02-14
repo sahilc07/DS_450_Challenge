@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.*;
 
-public class ReverseArray{
+public class MinMax {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size: ");
@@ -13,20 +13,18 @@ public class ReverseArray{
         for(int i=0; i<n; i++){
             a[i] = sc.nextInt();
         }
-        
-        int start = 0, end = n-1;
-        while(start<end){
-            int temp = a[start];
-            a[start] = a[end];
-            a[end] = temp;
-            start++;
-            end--;
-        }
 
-        System.out.println("Reversed Array: ");
+        int max = a[0], min = a[0];
+
         for(int i=0; i<n; i++){
-            System.out.print(a[i]+" ");
+            if(a[i]<min){
+                min = a[i];
+            }
+            if(a[i]>max){
+                max = a[i];
+            }
         }
+        System.out.println("Max Value: "+max+", Min Value: "+min);
         sc.close();
     }
 }
